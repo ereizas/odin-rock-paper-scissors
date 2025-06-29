@@ -9,3 +9,15 @@ function getComputerChoice(){
             return "scissors";
     }
 }
+
+function getHumanChoice(){
+    let choice = prompt("Choose a number:\n1. rock\n2. paper\n3. scissors")
+    switch(choice) {
+        case "1":
+            return "rock";
+        case "2":
+            return "paper";
+        case "3":
+            return "scissors";
+    }
+}
