@@ -56,5 +56,3 @@ let options = document.querySelector("#options");
 options.addEventListener("click", function(event){
     playRound(event.target.id,getComputerChoice());
 })
-
-playGame();
