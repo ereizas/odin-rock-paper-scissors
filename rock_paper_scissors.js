@@ -37,29 +37,4 @@ options.addEventListener("click", function(event){
     playRound(event.target.id,getComputerChoice());
 })
 
-function getHumanChoice(){
-    let choice = prompt("Choose a number:\n1. rock\n2. paper\n3. scissors")
-    switch(choice) {
-        case "1":
-            return "rock";
-        case "2":
-            return "paper";
-        case "3":
-            return "scissors";
-    }
-}
-
-function playGame(){
-    playRound(getHumanChoice(),getComputerChoice());
-    if(humanScore>computerScore){
-        console.log(`You win! Score: ${humanScore}-${computerScore}`)
-    }
-    else if(humanScore<computerScore){
-        console.log(`You lose. Score: ${humanScore}-${computerScore}`)
-    }
-    else{
-        console.log(`Tie. Score: ${humanScore}-${computerScore}`);
-    }
-}
-
 playGame();
