@@ -9,6 +9,7 @@ function getComputerChoice(){
             return "scissors";
     }
 }
+let winnerHeader = document.querySelector("#winner");
 let humanScorePara = document.querySelector("#humanScore");
 let computerScorePara = document.querySelector("#computerScore");
 let resultPara = document.querySelector("#result");
@@ -28,6 +29,12 @@ function playRound(humanChoice,computerChoice){
         computerScore++;
         computerScorePara.textContent = computerScore;
         resultPara.textContent = `You lose. ${computerChoice} beats ${humanChoice}`;
+    }
+    if(humanScore==5){
+        winnerHeader.textContent = "You won!";
+    }
+    else if(computerScore==5){
+        winnerHeader.textContent = "You lost :(";
     }
 }
 
