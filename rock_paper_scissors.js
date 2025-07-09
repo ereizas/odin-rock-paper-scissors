@@ -10,6 +10,23 @@ function getComputerChoice(){
     }
 }
 
+let humanScore = 0;
+let computerScore = 0;
+function playRound(humanChoice,computerChoice){
+    beats = {"rock":{"paper":false,"scissors":true},"paper":{"rock":true,"scissors":false},"scissors":{"rock":false,"paper":true}}
+    if(humanChoice==computerChoice){
+        console.log("Tie");
+    }
+    else if(beats[humanChoice][computerChoice]){
+        humanScore++;
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+    }
+    else{
+        computerScore++;
+        console.log(`You lose. ${computerChoice} beats ${humanChoice}`)
+    }
+}
+
 let options = document.querySelector("#options");
 
 options.addEventListener("click", function(event){
@@ -40,22 +57,6 @@ function getHumanChoice(){
 }
 
 function playGame(){
-    let humanScore = 0;
-    let computerScore = 0;
-    function playRound(humanChoice,computerChoice){
-        beats = {"rock":{"paper":false,"scissors":true},"paper":{"rock":true,"scissors":false},"scissors":{"rock":false,"paper":true}}
-        if(humanChoice==computerChoice){
-            console.log("Tie");
-        }
-        else if(beats[humanChoice][computerChoice]){
-            humanScore++;
-            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-        }
-        else{
-            computerScore++;
-            console.log(`You lose. ${computerChoice} beats ${humanChoice}`)
-        }
-    }
     playRound(getHumanChoice(),getComputerChoice());
     if(humanScore>computerScore){
         console.log(`You win! Score: ${humanScore}-${computerScore}`)
