@@ -9,6 +9,8 @@ function getComputerChoice(){
             return "scissors";
     }
 }
+let humanScorePara = document.querySelector("#humanScore");
+let computerScorePara = document.querySelector("#computerScore");
 let resultPara = document.querySelector("#result");
 let humanScore = 0;
 let computerScore = 0;
@@ -19,10 +21,12 @@ function playRound(humanChoice,computerChoice){
     }
     else if(beats[humanChoice][computerChoice]){
         humanScore++;
+        humanScorePara.textContent = humanScore;
         resultPara.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
     }
     else{
         computerScore++;
+        computerScorePara.textContent = computerScore;
         resultPara.textContent = `You lose. ${computerChoice} beats ${humanChoice}`;
     }
 }
