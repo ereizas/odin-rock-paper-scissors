@@ -9,21 +9,21 @@ function getComputerChoice(){
             return "scissors";
     }
 }
-
+let resultPara = document.querySelector("#result");
 let humanScore = 0;
 let computerScore = 0;
 function playRound(humanChoice,computerChoice){
     beats = {"rock":{"paper":false,"scissors":true},"paper":{"rock":true,"scissors":false},"scissors":{"rock":false,"paper":true}}
     if(humanChoice==computerChoice){
-        console.log("Tie");
+        resultPara.textContent = "Tie";
     }
     else if(beats[humanChoice][computerChoice]){
         humanScore++;
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        resultPara.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
     }
     else{
         computerScore++;
-        console.log(`You lose. ${computerChoice} beats ${humanChoice}`)
+        resultPara.textContent = `You lose. ${computerChoice} beats ${humanChoice}`;
     }
 }
 
