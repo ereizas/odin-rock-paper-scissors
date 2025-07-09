@@ -30,18 +30,7 @@ function playRound(humanChoice,computerChoice){
 let options = document.querySelector("#options");
 
 options.addEventListener("click", function(event){
-    let target = event.target;
-    switch(target.id){
-        case "rock":
-            console.log("rock");
-            break;
-        case "paper":
-            console.log("paper");
-            break;
-        case "scissors":
-            console.log("scissors");
-            break;
-    }
+    playRound(event.target.id,getComputerChoice());
 })
 
 function getHumanChoice(){
