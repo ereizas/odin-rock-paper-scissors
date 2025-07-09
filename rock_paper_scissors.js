@@ -9,12 +9,23 @@ function getComputerChoice(){
             return "scissors";
     }
 }
+
 let winnerHeader = document.querySelector("#winner");
 let humanScorePara = document.querySelector("#humanScore");
 let computerScorePara = document.querySelector("#computerScore");
 let resultPara = document.querySelector("#result");
 let humanScore = 0;
 let computerScore = 0;
+
+function resetGame(){
+    humanScore = 0;
+    computerScore = 0;
+    resultPara.textContent = "";
+    humanScorePara.textContent = `${humanScore}`;
+    computerScorePara.textContent = `${computerScore}`;
+    winnerHeader.textContent = "";
+}
+
 function playRound(humanChoice,computerChoice){
     beats = {"rock":{"paper":false,"scissors":true},"paper":{"rock":true,"scissors":false},"scissors":{"rock":false,"paper":true}}
     if(humanChoice==computerChoice){
@@ -32,9 +43,11 @@ function playRound(humanChoice,computerChoice){
     }
     if(humanScore==5){
         winnerHeader.textContent = "You won!";
+        setTimeout(resetGame,3000);
     }
     else if(computerScore==5){
         winnerHeader.textContent = "You lost :(";
+        setTimeout(resetGame,3000);
     }
 }
 
