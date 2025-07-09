@@ -10,6 +10,23 @@ function getComputerChoice(){
     }
 }
 
+let options = document.querySelector("#options");
+
+options.addEventListener("click", function(event){
+    let target = event.target;
+    switch(target.id){
+        case "rock":
+            console.log("rock");
+            break;
+        case "paper":
+            console.log("paper");
+            break;
+        case "scissors":
+            console.log("scissors");
+            break;
+    }
+})
+
 function getHumanChoice(){
     let choice = prompt("Choose a number:\n1. rock\n2. paper\n3. scissors")
     switch(choice) {
